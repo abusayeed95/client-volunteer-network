@@ -1,0 +1,26 @@
+.header-background {
+    opacity: 0.2;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+}
+
+.navbar .logo {
+    height: 60px;
+}
+
+.search-input {
+    width: 35%;
+    margin: auto;
+}
+
+.task-box {
+    height: 320px;
+    width: 270px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.task-name {
+    border-radius: 0 0 10px 10px;
+}
