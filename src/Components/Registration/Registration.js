@@ -1,48 +1,25 @@
 import React, { useContext, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 import './registration.css';
 
 const Registration = () => {
-    const [user, setUser, registerForm, setRegisterForm] = useContext(UserContext)
+    const [user, setUser, registerForm, setRegisterForm] = useContext(UserContext);
+    const history = useHistory();
     const handleInput = (event) => {
-        setRegisterForm({ ...registerForm, [event.target.name]: event.target.value })
-        // if (e.target.name === 'fullName') {
-        //     setRegisterForm({ ...registerForm, name: e.target.value })
-        // }
-        // if (e.target.name === 'email') {
-        //     setRegisterForm({ ...registerForm, email: e.target.value })
-        // }
-        // if (e.target.name === 'date') {
-        //     setRegisterForm({ ...registerForm, date: e.target.value })
-        // }
-        // if (e.target.name === 'description') {
-        //     setRegisterForm({ ...registerForm, description: e.target.value })
-        // }
-        // if (e.target.name === 'task') {
-        //     setRegisterForm({ ...registerForm, task: e.target.value })
-        // }
+        setRegisterForm({ ...registerForm, ...user, [event.target.name]: event.target.value })
     }
-    // const nameRef = useRef();
-    // const emailRef = useRef();
-    // const dateRef = useRef();
-    // const descriptionRef = useRef();
-    // const taskRef = useRef();
-
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        console.log(registerForm)
-        // const newForm = { name: nameRef.current.value, email: emailRef.current.value, date: dateRef.current.value, description: descriptionRef.current.value, task: taskRef.current.value }
-
-        // if (registerForm.name && registerForm.email && registerForm.date && registerForm.description && registerForm.task) {
-        //     fetch('http://localhost:4444/registerForVolunteering', {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify(registerForm)
-        //     })
-        //         .then(res => res.json())
-        //         .then(data => console.log(data))
-        // }
+        fetch('http://localhost:4444/registerForVolunteering', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(registerForm)
+        })
+            .then(res => res.json())
+            .then(data => console.log(data))
+        history.push('/events')
     }
     return (
         <div className="register-page d-flex flex-column justify-content-center align-items-center">

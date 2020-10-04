@@ -1,5 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Tab from './Components/Admin/Tab';
+import EventTasks from './Components/EventTasks/EventTasks';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import NotFound from './Components/NotFound/NotFound';
@@ -24,8 +26,14 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <PrivateRoute path="/events">
+            <EventTasks />
+          </PrivateRoute>
           <PrivateRoute path="/registration">
             <Registration />
+          </PrivateRoute>
+          <PrivateRoute path="/admin">
+            <Tab />
           </PrivateRoute>
           <Route path="*">
             <NotFound />

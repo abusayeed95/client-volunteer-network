@@ -13,7 +13,7 @@ const Home = () => {
             .then(res => res.json())
             .then(data => setVolunteeringScopes(data))
             .catch(error => console.log(error))
-    }, [])
+    }, [volunteeringScopes])
     return (
         <div className="header">
             <img className="header-background" src={homeBackground} alt="header background" />

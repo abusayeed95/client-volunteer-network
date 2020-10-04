@@ -1,0 +1,62 @@
+.logo {
+    height: 60px;
+    width: 202.81px;
+    display: block;
+    margin: 2rem auto;
+}
+
+/* .list-btn, .add-btn {
+    background: none !important;
+    color: #000 !important;
+} */
+
+.list-container h2 {
+    background: #fff;
+    padding: 2rem 1rem;
+}
+
+.list-container {
+    background: #E5E5E5;
+    min-height: 100vh;
+}
+
+.table {
+    background-color: #fff;
+}
+
+.table thead {
+    background: darkgrey;
+    font-size: 1rem;
+}
+
+.main-table {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    font-size: .8rem;
+    font-weight: 500;
+}
+
+.delete-icon {
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1rem;
+}
+
+.form-area h2 {
+    background: white;
+    padding: 2rem 1rem;
+}
+
+.form-area {
+    background: #E5E5E5;
+    min-height: 100vh;
+}
+
+.main-form {
+    background: #fff;
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: 10px;
+}

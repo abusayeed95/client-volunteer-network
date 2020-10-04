@@ -6,7 +6,7 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import { firebaseConfig } from './firebaseConfig';
 import { UserContext } from '../../App';
-import { useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -35,7 +35,7 @@ const Login = () => {
     return (
         <div className="login-page d-flex flex-column justify-content-center align-items-center">
             <div className="login-box-outside d-flex flex-column justify-content-center align-items-center">
-                <img src="https://i.ibb.co/60VGHLd/Group-1329.png" className="logo" alt="Volunteer Network" />
+                <Link to="/home"><img src="https://i.ibb.co/60VGHLd/Group-1329.png" className="logo" alt="Volunteer Network" /></Link>
                 <div className="login-box-inside d-flex flex-column justify-content-center align-items-center">
                     <h3 className="text-info"><span className="blue">We</span> <span className="red">Only</span> <span className="yellow">Have</span>  <span className="blue">Google</span> <span className="green">Login</span> <span className="red">Method</span></h3>
 
