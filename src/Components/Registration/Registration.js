@@ -12,7 +12,7 @@ const Registration = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4444/registerForVolunteering', {
+        fetch('https://volunteer--network.herokuapp.com/registerForVolunteering', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(registerForm)

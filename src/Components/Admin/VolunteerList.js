@@ -7,7 +7,7 @@ const VolunteerList = () => {
     const [registrationData, setRegistrationData] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4444/registrationInfo')
+        fetch('https://volunteer--network.herokuapp.com/registrationInfo')
             .then(res => res.json())
             .then(data => setRegistrationData(data))
     }, [registrationData])

@@ -9,7 +9,7 @@ import VolunteeringScopes from './VolunteeringScopes';
 const Home = () => {
     const [volunteeringScopes, setVolunteeringScopes] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4444/volunteeringScopes')
+        fetch('https://volunteer--network.herokuapp.com/volunteeringScopes')
             .then(res => res.json())
             .then(data => setVolunteeringScopes(data))
             .catch(error => console.log(error))

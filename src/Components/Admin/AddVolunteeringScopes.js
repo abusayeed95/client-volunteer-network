@@ -11,7 +11,7 @@ const AddVolunteeringScopes = () => {
 
     const handleAddEvent = (e) => {
         e.preventDefault();
-        fetch('http://localhost:4444/addVolunteeringScope', {
+        fetch('https://volunteer--network.herokuapp.com/addVolunteeringScope', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

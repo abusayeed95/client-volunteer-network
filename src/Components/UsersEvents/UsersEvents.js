@@ -5,7 +5,7 @@ const UsersEvents = (props) => {
     const { name, fullName, email, taskThumbnail, date, _id, uniqueId, task } = props.event;
 
     const handleCancel = (id) => {
-        fetch(`http://localhost:4444/cancelRegistration/?id=${id}`, {
+        fetch(`https://volunteer--network.herokuapp.com/cancelRegistration/?id=${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

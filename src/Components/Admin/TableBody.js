@@ -7,7 +7,7 @@ const TableBody = (props) => {
     const { name, fullName, email, _id, date, task } = props.tableData;
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:4444/cancelRegistration/?id=${id}`, {
+        fetch(`https://volunteer--network.herokuapp.com/cancelRegistration/?id=${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
