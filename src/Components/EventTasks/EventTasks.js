@@ -10,7 +10,12 @@ const EventTasks = () => {
     const [user, setUser] = useContext(UserContext);
     const eventSlice = events.slice(0, 10) || events;
     useEffect(() => {
-        fetch(`https://volunteer--network.herokuapp.com/getUserEvents/?uniqueId=${user.uniqueId}`)
+        fetch(`https://volunteer--network.herokuapp.com/getUserEvents/?uniqueId=${user.uniqueId}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'authorization': `Bearer ${sessionStorage.getItem('userToken')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setEvents(data))
     }, [events])

@@ -12,8 +12,9 @@ const Home = () => {
         fetch('https://volunteer--network.herokuapp.com/volunteeringScopes')
             .then(res => res.json())
             .then(data => setVolunteeringScopes(data))
-            .catch(error => console.log(error))
-    }, [volunteeringScopes])
+    }, []);
+    const shuffle = volunteeringScopes.sort((a, b) => 0.5 - Math.random());
+    console.log(shuffle)
     return (
         <div className="header">
             <img className="header-background" src={homeBackground} alt="header background" />

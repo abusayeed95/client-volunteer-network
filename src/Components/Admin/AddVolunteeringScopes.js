@@ -1,3 +1,5 @@
+import { faCheckDouble } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 
@@ -18,19 +20,21 @@ const AddVolunteeringScopes = () => {
             },
             body: JSON.stringify(addScope)
         })
-            .then(res => res.json())
-            .then(data => console.log(data))
-        setShow(true)
+            .then(res => {
+                if (res.status === 200) {
+                    setShow(true)
+                }
+            })
     }
     return (
         <div className="form-area">
             <Modal show={show} onHide={handleClose}>
-                <Modal.Body>Successfully Added Event</Modal.Body>
-                <Modal.Footer>
+                <Modal.Body className="d-flex flex-column justify-content-center">
+                    <h5 className="text-success text-center py-5">Successfully Added Event <FontAwesomeIcon icon={faCheckDouble} /></h5>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                </Modal.Footer>
+                </Modal.Body>
             </Modal>
             <div>
                 <h2>Add Event</h2>

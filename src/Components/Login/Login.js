@@ -23,14 +23,24 @@ const Login = () => {
             .then(result => {
                 const { displayName, email, photoURL, uid } = result.user;
                 const loggedUser = { name: displayName, email, uniqueId: uid, img: photoURL };
-                setUser(loggedUser)
+                setUser(loggedUser);
+                authToken();
                 history.replace(from)
 
             })
             .catch(error => {
                 console.log(error)
             });
+    }
 
+    const authToken = () => {
+        firebase.auth().currentUser.getIdToken(true)
+            .then(userToken => {
+                sessionStorage.setItem('userToken', userToken)
+            })
+            .catch(error => {
+                console.log(error)
+            });
     }
     return (
         <div className="login-page d-flex flex-column justify-content-center align-items-center">

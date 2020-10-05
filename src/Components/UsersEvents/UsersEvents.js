@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 
 const UsersEvents = (props) => {
-    const { name, fullName, email, taskThumbnail, date, _id, uniqueId, task } = props.event;
+    const { email, taskThumbnail, date, _id, uniqueId, task } = props.event;
 
     const handleCancel = (id) => {
         fetch(`https://volunteer--network.herokuapp.com/cancelRegistration/?id=${id}`, {
@@ -10,7 +10,11 @@ const UsersEvents = (props) => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
-    }
+    };
+    useEffect(() => {
+        handleCancel()
+    }, [task])
+
     return (
         <Col xs={6} className="p-3">
             <Row className="m-0 tasks-box bg-light p-3">

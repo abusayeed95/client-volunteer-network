@@ -5,17 +5,12 @@
     margin: 2rem auto;
 }
 
-/* .list-btn, .add-btn {
-    background: none !important;
-    color: #000 !important;
-} */
-
-.list-container h2 {
+h2 {
     background: #fff;
     padding: 2rem 1rem;
 }
 
-.list-container {
+.list-container, .form-area, .list-area {
     background: #E5E5E5;
     min-height: 100vh;
 }
@@ -44,19 +39,14 @@
     font-size: 1rem;
 }
 
-.form-area h2 {
-    background: white;
-    padding: 2rem 1rem;
-}
-
-.form-area {
-    background: #E5E5E5;
-    min-height: 100vh;
-}
-
 .main-form {
     background: #fff;
     padding: 2rem;
     margin: 2rem;
     border-radius: 10px;
+}
+
+.banner {
+    height: 2rem;
+    width: 2rem;
 }
