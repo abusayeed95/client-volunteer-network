@@ -8,7 +8,7 @@ const AdminRoute = ({ children, ...rest }) => {
         <Route
             {...rest}
             render={({ location }) =>
-                user.email === 'sayeedsayem8@gmail.com' || 'sayemdsayeed.professional@gmail.com' ? (
+                user.email ? (
                     children
                 ) : (
                         <Redirect

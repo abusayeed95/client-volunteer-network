@@ -28,12 +28,13 @@ const UsersEvents = (props) => {
     }, [_id])
 
     return (
-        <><Modal show={show} onHide={handleClose}>
-            <Modal.Body className="d-flex flex-column justify-content-center">
-                <h4 className="text-danger my-5 text-center">Cancelled Successfully <FontAwesomeIcon icon={faWindowClose} /></h4>
-                <Button variant="secondary" onClick={() => setShow(false)}>Close</Button>
-            </Modal.Body>
-        </Modal>
+        <>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Body className="d-flex flex-column justify-content-center">
+                    <h4 className="text-danger my-5 text-center">Cancelled Successfully <FontAwesomeIcon icon={faWindowClose} /></h4>
+                    <Button variant="secondary" onClick={() => setShow(false)}>Close</Button>
+                </Modal.Body>
+            </Modal>
             {
                 hide ? null :
                     <Col xs={6} className="p-3">
