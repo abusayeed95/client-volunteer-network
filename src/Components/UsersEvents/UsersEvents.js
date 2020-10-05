@@ -25,7 +25,7 @@ const UsersEvents = (props) => {
     };
     useEffect(() => {
         handleCancel()
-    }, [_id])
+    }, [fetched, task])
 
     return (
         <>

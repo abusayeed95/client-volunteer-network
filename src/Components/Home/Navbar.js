@@ -23,7 +23,7 @@ const Navbar = () => {
                 <Link className="nav-link font-weight-bold" to="/home">Home</Link>
                 <Link className="nav-link font-weight-bold" to="/destination">Destination</Link>
                 <Link className="nav-link font-weight-bold" to="/blog">Blog</Link>
-                <Link className="nav-link font-weight-bold" to="/events">Events</Link>
+                <Link className="nav-link font-weight-bold bg-info rounded mr-2" to="/events">Your Events</Link>
                 {
                     user.img ? <div className="btn p-0" title="Wanna Log Out? Click Here" onClick={() => setShowPopup(true)} style={{ height: '40px', width: '40px' }}><img src={user.img} alt="User" className="img-fluid rounded-circle" /></div> :
                         <Button className="px-3 mx-2" onClick={() => history.push('/login')}>Login</Button>
