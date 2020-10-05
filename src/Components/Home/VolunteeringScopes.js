@@ -5,7 +5,8 @@ import { UserContext } from '../../App';
 
 const VolunteeringScopes = (props) => {
     const { color, img, task, _id } = props.scopes;
-    const [user, registerForm, setRegisterForm] = useContext(UserContext);
+    const [registerForm, setRegisterForm] = useContext(UserContext);
+    const [user] = useContext(UserContext);
     const history = useHistory();
 
     const handleRegistration = (id, scope, picture) => {

@@ -25,7 +25,7 @@ const UsersEvents = (props) => {
     };
     useEffect(() => {
         handleCancel()
-    }, [fetched])
+    }, [_id])
 
     return (
         <><Modal show={show} onHide={handleClose}>
@@ -39,7 +39,12 @@ const UsersEvents = (props) => {
                     <Col xs={6} className="p-3">
                         <Row className="m-0 tasks-box bg-light p-3">
                             <Col xs={3} className="w-100 h-100">
-                                <img className="img-fluid" src={taskThumbnail} alt="Volunteer Scope" />
+                                {
+                                    taskThumbnail ? <img className="img-fluid" src={taskThumbnail} alt="Volunteer Scope" /> :
+                                        <div className="bg-info rounded">
+                                            <p className="text-warning font-weight-bold py-4 px-2">No Banner Available for this Event</p>
+                                        </div>
+                                }
                             </Col>
                             <Col xs={9} className="d-flex flex-column justify-content-center align-items-center">
                                 <h3>{task}</h3>
