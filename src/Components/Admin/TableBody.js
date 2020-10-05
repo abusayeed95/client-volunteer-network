@@ -8,6 +8,7 @@ const TableBody = (props) => {
     const { name, fullName, email, _id, date, task } = props.tableData;
     const [show, setShow] = useState(false);
     const [hide, setHide] = useState(false);
+    const [fetched, setFetched] = useState(true);
 
     const handleClose = () => setShow(false);
     const handleDelete = (id) => {
@@ -18,12 +19,13 @@ const TableBody = (props) => {
                 if (res.status === 200) {
                     setShow(true)
                     setHide(true)
+                    setFetched(!fetched)
                 }
             })
     };
     useEffect(() => {
         handleDelete();
-    }, [])
+    }, [fetched])
 
     return (
         <>

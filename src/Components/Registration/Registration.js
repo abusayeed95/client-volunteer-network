@@ -1,10 +1,10 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../App';
 import './registration.css';
 
 const Registration = () => {
-    const [user, setUser, registerForm, setRegisterForm] = useContext(UserContext);
+    const [user, registerForm, setRegisterForm] = useContext(UserContext);
     const history = useHistory();
     const handleInput = (event) => {
         setRegisterForm({ ...registerForm, ...user, [event.target.name]: event.target.value })

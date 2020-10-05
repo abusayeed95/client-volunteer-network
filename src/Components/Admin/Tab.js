@@ -9,7 +9,6 @@ import DeleteEvent from './DeleteEvent';
 import VolunteerList from './VolunteerList';
 
 const Tab = () => {
-
     return (
         <TabBot.Container id="left-tabs-example" defaultActiveKey="volunteerList">
             <Row className="m-0">

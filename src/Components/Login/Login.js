@@ -11,7 +11,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 firebase.initializeApp(firebaseConfig);
 
 const Login = () => {
-    const [user, setUser] = useContext(UserContext);
+    const [setUser] = useContext(UserContext);
 
     let history = useHistory();
     let location = useLocation();

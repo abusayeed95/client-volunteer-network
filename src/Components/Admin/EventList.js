@@ -7,6 +7,7 @@ const EventList = (props) => {
     const { task, img, date, _id } = props.scope;
     const [show, setShow] = useState(false);
     const [hide, setHide] = useState(false);
+    const [fetched, setFetched] = useState(true);
 
     const handleClose = () => setShow(false);
 
@@ -18,12 +19,13 @@ const EventList = (props) => {
                 if (res.status === 200) {
                     setShow(true)
                     setHide(true)
+                    setFetched(!fetched)
                 }
             })
     };
     useEffect(() => {
         handleDelete();
-    }, [])
+    }, [fetched])
 
     return (
         <>

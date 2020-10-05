@@ -7,7 +7,7 @@ import './eventTasks.css'
 
 const EventTasks = () => {
     const [events, setEvents] = useState([]);
-    const [user, setUser] = useContext(UserContext);
+    const [user] = useContext(UserContext);
     const eventSlice = events.slice(0, 10) || events;
     useEffect(() => {
         fetch(`https://volunteer--network.herokuapp.com/getUserEvents/?uniqueId=${user.uniqueId}`, {
