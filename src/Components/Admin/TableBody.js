@@ -7,8 +7,9 @@ import './admin.css'
 const TableBody = (props) => {
     const { name, fullName, email, _id, date, task } = props.tableData;
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const [hide, setHide] = useState(false);
 
+    const handleClose = () => setShow(false);
     const handleDelete = (id) => {
         fetch(`https://volunteer--network.herokuapp.com/cancelRegistration/?id=${id}`, {
             method: 'DELETE'
@@ -16,6 +17,7 @@ const TableBody = (props) => {
             .then(res => {
                 if (res.status === 200) {
                     setShow(true)
+                    setHide(true)
                 }
             })
     };
@@ -24,21 +26,26 @@ const TableBody = (props) => {
     }, [])
 
     return (
-        <tr>
+        <>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Body>
-                    <h5 className="text-danger ">Cancelled Successfully <FontAwesomeIcon icon={faTrashAlt} /></h5>
+                <Modal.Body className="d-flex flex-column justify-content-center">
+                    <h4 className="my-5 text-danger text-center">Deleted Successfully <FontAwesomeIcon icon={faTrashAlt} /></h4>
                     <Button variant="secondary" onClick={() => setShow(false)}>Close</Button>
                 </Modal.Body>
             </Modal>
-            <td>{name || fullName}</td>
-            <td>{email}</td>
-            <td>{date}</td>
-            <td>{task}</td>
-            <td>
-                <button onClick={() => handleDelete(_id)} className="delete-icon bg-danger text-light rounded" ><FontAwesomeIcon icon={faTrashAlt} /></button>
-            </td>
-        </tr>
+            {
+                hide ? null :
+                    <tr>
+                        <td>{name || fullName}</td>
+                        <td>{email}</td>
+                        <td>{date}</td>
+                        <td>{task}</td>
+                        <td>
+                            <button onClick={() => handleDelete(_id)} className="delete-icon bg-danger text-light rounded" ><FontAwesomeIcon icon={faTrashAlt} /></button>
+                        </td>
+                    </tr>
+            }
+        </>
     );
 };
 

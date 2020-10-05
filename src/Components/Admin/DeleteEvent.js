@@ -9,7 +9,7 @@ const DeleteEvent = () => {
             .then(res => res.json())
             .then(data => setVolunteeringScopes(data))
             .catch(error => console.log(error))
-    }, [volunteeringScopes])
+    }, [])
     return (
         <div className="list-area">
             <h2>Delete Events</h2>

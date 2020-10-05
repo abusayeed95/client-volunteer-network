@@ -18,7 +18,7 @@ const EventTasks = () => {
         })
             .then(res => res.json())
             .then(data => setEvents(data))
-    }, [events])
+    }, [])
     return (
         <div className="event-tasks-page">
             <Navbar />

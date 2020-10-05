@@ -10,7 +10,7 @@ const VolunteerList = () => {
         fetch('https://volunteer--network.herokuapp.com/registrationInfo')
             .then(res => res.json())
             .then(data => setRegistrationData(data))
-    }, [registrationData])
+    }, [])
     return (
         <div className="list-container">
             <h2>Volunteer Register List</h2>
