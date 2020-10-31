@@ -14,7 +14,7 @@ const VolunteeringScopes = (props) => {
         history.push("/registration")
     }
     return (
-        <Col onClick={() => handleRegistration(_id, task, img)} xs={3} className="d-flex justify-content-around align-items-center pb-5">
+        <Col onClick={() => handleRegistration(_id, task, img)} xs={12} sm={6} md={4} lg={3} className="d-flex justify-content-around align-items-center pb-5">
             <div className="task-box d-flex" style={{ background: img ? `url('${img}')` : 'powderblue', backgroundSize: '270px 320px ', backgroundRepeat: 'no-repeat' }}>
                 {!img && <p className="display-5 text-primary position-absolute banner-text">Banner...!!! <br /> Coming Soon.........!</p>}
                 <h5 className="text-center text-light p-4 w-100 task-name position-absolute" style={{ background: `${color}` }}>{task}</h5>

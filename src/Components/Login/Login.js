@@ -22,6 +22,9 @@ const Login = () => {
         firebase.auth().signInWithPopup(provider)
             .then(result => {
                 const { displayName, email, photoURL, uid } = result.user;
+                if (email === 'sayeedsayem8@gmail.com') {
+                    setUser({ ...user, admin: true })
+                }
                 const loggedUser = { name: displayName, email, uniqueId: uid, img: photoURL };
                 setUser({ ...user, ...loggedUser });
                 authToken();
@@ -49,7 +52,7 @@ const Login = () => {
                 <div className="login-box-inside d-flex flex-column justify-content-center align-items-center">
                     <h3 className="text-info"><span className="blue">We</span> <span className="red">Only</span> <span className="yellow">Have</span>  <span className="blue">Google</span> <span className="green">Login</span> <span className="red">Method</span></h3>
 
-                    <button onClick={handleLogin} className="login-btn d-flex justify-content-center align-items-center"><FontAwesomeIcon className="red" icon={faGoogle} /><span className="text"> <span className="blue">Login</span> <span className="green">With</span> <span className="blue">G</span><span className="red">O</span><span className="yellow">O</span><span className="blue">G</span><span className="green">L</span><span className="red">E</span></span></button>
+                    <button onClick={handleLogin} className="login-btn d-flex justify-content-center align-items-center"><FontAwesomeIcon className="red" icon={faGoogle} /> <span className="blue">Login</span> <span className="green">With</span> <span className="blue">G</span><span className="red">O</span><span className="yellow">O</span><span className="blue">G</span><span className="green">L</span><span className="red">E</span></button>
                 </div>
             </div>
         </div>

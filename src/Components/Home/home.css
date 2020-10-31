@@ -1,9 +1,9 @@
-.header-background {
+/* .header-background {
     opacity: 0.2;
     z-index: -1;
     position: absolute;
     width: 100%;
-}
+} */
 
 .navbar .logo {
     height: 60px;
@@ -32,4 +32,77 @@
     font-size: 25px;
     top: 5rem;
     left: 2rem;
+}
+
+@media (max-width:991px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    .search-input {
+        width: 50%;
+        margin: auto;
+    }
+    .login-page .logo {
+        height: 50px;
+    }
+    .login-box-inside {
+        width: 50%;
+    }
+    .login-box-outside {
+        width: 60%;
+    }
+    .login-page h3 {
+        font-size: 1.2rem;
+    }
+    .login-page .login-btn {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width:576px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+    .navbar .logo {
+        height: 45px;
+        width: auto;
+    }
+    .navbar-links {
+        margin-right: auto;
+    }
+    .search-input {
+        width: 60%;
+        margin: auto;
+    }
+    .login-box-outside {
+        width: 75%;
+    }
+    .login-page h3 {
+        font-size: 1rem;
+    }
+    .login-page .login-btn {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width:400px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    .navbar .logo {
+        height: 35px;
+        width: auto;
+    }
+    .navbar-links {
+        margin-right: auto;
+    }
+    .login-box-outside {
+        width: 90%;
+    }
+    .login-page h3 {
+        font-size: .9rem;
+    }
+    .login-page .login-btn {
+        font-size: 1rem;
+    }
 }

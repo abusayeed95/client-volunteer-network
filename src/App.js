@@ -28,15 +28,15 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
+          <AdminRoute path="/admin">
+            <Tab />
+          </AdminRoute>
           <PrivateRoute path="/events">
             <EventTasks />
           </PrivateRoute>
           <PrivateRoute path="/registration">
             <Registration />
           </PrivateRoute>
-          <AdminRoute path="/admin">
-            <Tab />
-          </AdminRoute>
           <Route path="*">
             <NotFound />
           </Route>

@@ -4,12 +4,12 @@
 }
 
 .login-box-inside {
-    width: 570px;
-    height: 457px;
     background: #FFFFFF;
     border: 1px solid #ABABAB;
     box-sizing: border-box;
     border-radius: 4px;
+    width: 100%;
+    padding: 5rem 2rem;
 }
 
 .login-page .logo {
@@ -19,21 +19,14 @@
 }
 
 .login-page .login-btn {
-    padding: 0 .5rem;
-    font-size: 2rem;
+    padding: .5rem .5rem;
+    font-size: 2vw;
+    font-weight: 700;
     border: 1px solid #ABABAB;
     background-color: #fff;
     border-radius: 3rem;
     margin-top: 1.5rem;
-    padding: 0.5rem;
-    display: inline-block;
-}
-
-.login-btn .text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-left: .5rem;
+    height: auto;
 }
 
 .red {

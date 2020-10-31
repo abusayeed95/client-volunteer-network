@@ -37,20 +37,20 @@ const UsersEvents = (props) => {
             </Modal>
             {
                 hide ? null :
-                    <Col xs={6} className="p-3">
+                    <Col xs={12} sm={6} className="p-3">
                         <Row className="m-0 tasks-box bg-light p-3">
-                            <Col xs={3} className="w-100 h-100">
+                            <Col className="d-flex justify-content-center" xs={12} md={4} lg={3}>
                                 {
-                                    taskThumbnail ? <img className="img-fluid" src={taskThumbnail} alt="Volunteer Scope" /> :
+                                    taskThumbnail ? <img style={{ height: '25vh' }} className="img-fluid" src={taskThumbnail} alt="Volunteer Scope" /> :
                                         <div className="bg-info rounded">
                                             <p className="text-warning font-weight-bold py-4 px-2">No Banner Available for this Event</p>
                                         </div>
                                 }
                             </Col>
-                            <Col xs={9} className="d-flex flex-column justify-content-center align-items-center">
-                                <h3>{task}</h3>
-                                <p><strong>Date:</strong> {date}</p>
-                                <Button onClick={() => handleCancel(_id)} variant="danger">Cancel</Button>
+                            <Col xs={12} md={8} lg={9} className="d-flex flex-column justify-content-center align-items-center">
+                                <h3 style={{ fontSize: '2vw' }}>{task}</h3>
+                                <p style={{ fontSize: '1vw' }}><strong>Date:</strong> {date}</p>
+                                <Button style={{ fontSize: '1.5vw' }} onClick={() => handleCancel(_id)} variant="danger">Cancel</Button>
                             </Col>
                         </Row>
                     </Col>
